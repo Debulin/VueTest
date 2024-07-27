@@ -54,6 +54,8 @@ const update = () => {
     <div>
       <input v-bind:value="text" v-on:input="onInput" placeholder="Type here">
       <p>{{text}}</p>
+      <input v-model="text" >
+      <p>{{ text }}</p>
     </div>
     <button @click = "update">
       Update User Info
