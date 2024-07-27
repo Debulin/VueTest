@@ -19,6 +19,11 @@ const htmlContent = '<p>This is <strong>HTML</strong> content.</p>'
 const incr = () => {//setup直接定义方法
   count1.value++
 }
+const onInput = (e) => {
+  text.value=e.target.value
+}
+const text = ref('测试')
+
 const update = () => {
   user.value.name = 'Jane Doe'
   user.value.age = 20
@@ -46,6 +51,10 @@ const update = () => {
     </button>
     <p></p>
     <div v-html="htmlContent"></div>
+    <div>
+      <input v-bind:value="text" v-on:input="onInput" placeholder="Type here">
+      <p>{{text}}</p>
+    </div>
     <button @click = "update">
       Update User Info
     </button>
